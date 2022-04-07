@@ -6,7 +6,11 @@
 
 * 3000 is the port for client side
 
-* Clone the repo and then start the server using
+* Clone the repo 
+
+* Delete the node_module folders (optional)
+
+* and then start the server using
 ```bash
 npm install
 nodemon index.js
