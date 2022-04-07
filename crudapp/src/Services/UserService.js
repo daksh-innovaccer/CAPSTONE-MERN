@@ -28,6 +28,10 @@ class UserService {
         return axios.post(USER_BASE_URL, users, { headers: headers })
     }
 
+    editUser(id,users){
+        return axios.post(USER_BASE_URL + '/edit/' + id , users, {headers:headers})
+    }
+
     deleteUser(id) {
         return axios.delete(USER_BASE_URL + "/" + id, { headers: headers })
     }

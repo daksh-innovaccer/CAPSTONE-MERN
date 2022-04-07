@@ -9,7 +9,8 @@ const initialState = {
     usermail: '',
     userpassword:'',
     userphone: '',
-    usergender :'Male'
+    usergender :'Male',
+    id: ''
 }
 const crudReducer = (state = initialState, action) => {
     if (action.type === 'email') {

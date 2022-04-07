@@ -31,7 +31,9 @@ class UserService {
         return await User.updateOne({ "_id": _id }, { $set: { isDel: true } })
     }
 
-
+    async editUser(_id, user) {
+        return await User.updateOne({ "_id": _id }, { $set: user })
+    }
 
     async loginUser(email, password) {
         const result = await User.find({ "email": email });
@@ -52,7 +54,7 @@ class UserService {
                 }
                 else {
                     // FAILURE
-                    return ;
+                    return;
                 }
             }
         }
