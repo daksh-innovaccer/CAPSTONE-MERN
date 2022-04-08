@@ -18,8 +18,12 @@ const AddUser = () => {
         }
 
         UserService.postUser(userData).then((res) => {
-            console.log(res)
+
             if (res.status == 200) {
+                dispatch({ type: 'fullname', value:"" })
+                dispatch({ type: 'usermail', value: "" })
+                dispatch({ type: 'userpassword', value: "" })
+                dispatch({ type: 'userphone', value: "" })
                 navigate("/list")
             }
         })

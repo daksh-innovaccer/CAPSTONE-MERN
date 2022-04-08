@@ -24,7 +24,7 @@ const ListUser = () => {
 
     const { email, users } = useSelector(state => state)
     
-    console.log(email)
+    //console.log(email)
 
     const editHandler =(id) =>{
         localStorage.setItem("id", id)

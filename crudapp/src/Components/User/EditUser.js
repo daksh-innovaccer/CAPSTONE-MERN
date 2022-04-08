@@ -12,10 +12,19 @@ const EditUser = () => {
     const id = localStorage.getItem("id")
     
     console.log(users,id)
-    // useEffect(() => {
-    //     console.log("inside use effect")
-    //     navigate(`/edit/${users._id}`)
-    // }, [])
+    let result = users.filter((user)=> "_id"==id)
+    console.log(result)
+    useEffect(() => {
+        // console.log("inside use effect")
+        // navigate(`/edit/${users._id}`)
+        UserService.userById(id).then((res)=>{
+            console.log(res.data)
+            dispatch({type:'fullname', value: res.data.fullname})
+            dispatch({type:'usermail', value: res.data.email})
+            dispatch({type:'userpassword', value: res.data.password})
+            dispatch({type:'userphone', value: res.data.phone})
+        })
+    }, [])
 
     const submitHandler = (e) => {
         

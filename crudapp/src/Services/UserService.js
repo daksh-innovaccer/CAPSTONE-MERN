@@ -35,6 +35,10 @@ class UserService {
     deleteUser(id) {
         return axios.delete(USER_BASE_URL + "/" + id, { headers: headers })
     }
+
+    userById(id){
+        return axios.get(USER_BASE_URL + "/" + id, {headers:headers})
+    }
 }
 
 export default new UserService()
